@@ -11,7 +11,9 @@ class SongsController < ApplicationController
 
   # GET /songs/1
   def show
-    render json: @song.to_json
+      @playlist = Playlist.find(params[:playlist_id])
+      @song = Song.find(params[:id].merge(playlist_id: @playlist.id))
+      render json: @song.to_json
   end
 
   # POST /songs
