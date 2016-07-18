@@ -22,12 +22,11 @@ class SongsController < ApplicationController
     @song = @playlist.songs.build(song_params)
 
     if @song.save
-      render json: @song.to_json, status: :created, location: @song
+      render json: @song.to_json, status: :created
     else
       render json: @song.errors, status: :unprocessable_entity
     end
 
-    redirect_to @playlist
   end
 
   # PATCH/PUT /songs/1

@@ -1541,3 +1541,236 @@ Processing by SongsController#index as JSON
 Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.7ms)
 
 
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "Rack::Cors" => Rack::Cors
+
+ (called from <top (required)> at /Users/JGraham/wdi/projects/playlist-rails-api/config/environment.rb:5)
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:39:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (3.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (2.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 36ms (Views: 9.8ms | ActiveRecord: 18.9ms)
+
+
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:39:57 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 3ms (Views: 1.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/playlists/3/songs.json" for ::1 at 2016-07-18 17:40:04 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"3"}
+  [1m[36mPlaylist Load (1.7ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSong Load (1.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+Completed 200 OK in 49ms (Views: 0.1ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/playlists/3/songs.json" for ::1 at 2016-07-18 17:40:04 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"3"}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/playlists/1/songs.json" for ::1 at 2016-07-18 17:40:06 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"1"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 1]]
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/playlists/1/songs.json" for ::1 at 2016-07-18 17:40:07 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"1"}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 1]]
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:41:24 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 30ms (Views: 22.4ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/playlists.json" for ::1 at 2016-07-18 17:41:28 -0400
+Processing by PlaylistsController#create as JSON
+  Parameters: {"name"=>"Test add", "playlist"=>{"name"=>"Test add"}}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (16.9ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["name", "Test add"], ["created_at", 2016-07-18 21:41:28 UTC], ["updated_at", 2016-07-18 21:41:28 UTC]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 44ms (Views: 6.3ms | ActiveRecord: 20.6ms)
+
+
+Started GET "/playlists/4.json" for ::1 at 2016-07-18 17:41:30 -0400
+Processing by PlaylistsController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 4ms (Views: 1.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:41:34 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (2.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:41:40 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:41:53 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/playlists/3/songs.json" for ::1 at 2016-07-18 17:42:01 -0400
+Processing by SongsController#create as JSON
+  Parameters: {"user"=>"Anh", "playlist_id"=>"3", "title"=>"Eyes Wide Open - dBridge Remix", "artist"=>"J:Kenzo", "album"=>"Eyes Wide Open (feat. Rhianna Kenny) [Remixes]", "album_art"=>"https://i.scdn.co/image/58ab80227610c529387507d1ca001f0d74311e73", "duration"=>311980, "audio_url"=>"https://p.scdn.co/mp3-preview/3ab3d51648b5d4f6d60442357d3653afa4b6c982", "score"=>0, "song"=>{"user"=>"Anh", "playlist_id"=>"3", "title"=>"Eyes Wide Open - dBridge Remix", "artist"=>"J:Kenzo", "album"=>"Eyes Wide Open (feat. Rhianna Kenny) [Remixes]", "album_art"=>"https://i.scdn.co/image/58ab80227610c529387507d1ca001f0d74311e73", "duration"=>311980, "audio_url"=>"https://p.scdn.co/mp3-preview/3ab3d51648b5d4f6d60442357d3653afa4b6c982", "score"=>0}}
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: playlist_id, duration
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.6ms)[0m  [1m[32mINSERT INTO "songs" ("user", "playlist_id", "title", "artist", "album", "album_art", "audio_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user", "Anh"], ["playlist_id", 3], ["title", "Eyes Wide Open - dBridge Remix"], ["artist", "J:Kenzo"], ["album", "Eyes Wide Open (feat. Rhianna Kenny) [Remixes]"], ["album_art", "https://i.scdn.co/image/58ab80227610c529387507d1ca001f0d74311e73"], ["audio_url", "https://p.scdn.co/mp3-preview/3ab3d51648b5d4f6d60442357d3653afa4b6c982"], ["created_at", 2016-07-18 21:42:01 UTC], ["updated_at", 2016-07-18 21:42:01 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 113ms (ActiveRecord: 4.0ms)
+
+
+  
+NoMethodError (undefined method `song_url' for #<SongsController:0x007fbe4c1e4210>
+Did you mean?  song_params):
+  
+app/controllers/songs_controller.rb:25:in `create'
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:44:42 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (1.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 32ms (Views: 18.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/playlists/3/songs.json" for ::1 at 2016-07-18 17:44:49 -0400
+Processing by SongsController#create as JSON
+  Parameters: {"user"=>"Anh", "playlist_id"=>"3", "title"=>"Working For It - Bonus Track", "artist"=>"ZHU", "album"=>"Genesis Series", "album_art"=>"https://i.scdn.co/image/35c73634dfb206c419c90862e17f152952b9a56f", "duration"=>231813, "audio_url"=>"https://p.scdn.co/mp3-preview/5e72c47c060e697fb2939217a110c72de5388e70", "score"=>0, "song"=>{"user"=>"Anh", "playlist_id"=>"3", "title"=>"Working For It - Bonus Track", "artist"=>"ZHU", "album"=>"Genesis Series", "album_art"=>"https://i.scdn.co/image/35c73634dfb206c419c90862e17f152952b9a56f", "duration"=>231813, "audio_url"=>"https://p.scdn.co/mp3-preview/5e72c47c060e697fb2939217a110c72de5388e70", "score"=>0}}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: playlist_id, duration
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.3ms)[0m  [1m[32mINSERT INTO "songs" ("user", "playlist_id", "title", "artist", "album", "album_art", "audio_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user", "Anh"], ["playlist_id", 3], ["title", "Working For It - Bonus Track"], ["artist", "ZHU"], ["album", "Genesis Series"], ["album_art", "https://i.scdn.co/image/35c73634dfb206c419c90862e17f152952b9a56f"], ["audio_url", "https://p.scdn.co/mp3-preview/5e72c47c060e697fb2939217a110c72de5388e70"], ["created_at", 2016-07-18 21:44:49 UTC], ["updated_at", 2016-07-18 21:44:49 UTC]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 130ms (ActiveRecord: 7.7ms)
+
+
+  
+NoMethodError (undefined method `song_url' for #<SongsController:0x007fbe4f923078>
+Did you mean?  song_params):
+  
+app/controllers/songs_controller.rb:25:in `create'
+Started GET "/playlists/1/songs.json" for ::1 at 2016-07-18 17:45:38 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"1"}
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 1]]
+Completed 200 OK in 36ms (Views: 0.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/playlists/1/songs.json" for ::1 at 2016-07-18 17:45:38 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"1"}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mSong Load (0.7ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 1]]
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/playlists/3/songs.json" for ::1 at 2016-07-18 17:45:47 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"3"}
+  [1m[36mPlaylist Load (1.6ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/playlists/3/songs.json" for ::1 at 2016-07-18 17:45:47 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"3"}
+  [1m[36mPlaylist Load (0.2ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:46:24 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 71ms (Views: 49.9ms | ActiveRecord: 12.2ms)
+
+
+Started POST "/playlists/3/songs.json" for ::1 at 2016-07-18 17:46:32 -0400
+Processing by SongsController#create as JSON
+  Parameters: {"user"=>"Anh", "playlist_id"=>"3", "title"=>"Work from Home", "artist"=>"Fifth Harmony", "album"=>"7/27 (Deluxe)", "album_art"=>"https://i.scdn.co/image/3c54c9104cffee90367dae387123229a572602fa", "duration"=>214480, "audio_url"=>"https://p.scdn.co/mp3-preview/612249eac3e69c4e43bcf67d5efef6486654e4b2", "score"=>0, "song"=>{"user"=>"Anh", "playlist_id"=>"3", "title"=>"Work from Home", "artist"=>"Fifth Harmony", "album"=>"7/27 (Deluxe)", "album_art"=>"https://i.scdn.co/image/3c54c9104cffee90367dae387123229a572602fa", "duration"=>214480, "audio_url"=>"https://p.scdn.co/mp3-preview/612249eac3e69c4e43bcf67d5efef6486654e4b2", "score"=>0}}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: playlist_id, duration
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("user", "playlist_id", "title", "artist", "album", "album_art", "audio_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user", "Anh"], ["playlist_id", 3], ["title", "Work from Home"], ["artist", "Fifth Harmony"], ["album", "7/27 (Deluxe)"], ["album_art", "https://i.scdn.co/image/3c54c9104cffee90367dae387123229a572602fa"], ["audio_url", "https://p.scdn.co/mp3-preview/612249eac3e69c4e43bcf67d5efef6486654e4b2"], ["created_at", 2016-07-18 21:46:32 UTC], ["updated_at", 2016-07-18 21:46:32 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 26ms (Views: 0.1ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/playlists.json" for ::1 at 2016-07-18 17:47:09 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (1.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/playlists/3/songs.json" for ::1 at 2016-07-18 17:47:17 -0400
+Processing by SongsController#create as JSON
+  Parameters: {"user"=>"Anh", "playlist_id"=>"3", "title"=>"Summer Sixteen", "artist"=>"Drake", "album"=>"Summer Sixteen", "album_art"=>"https://i.scdn.co/image/deca07958307f6fb491514b913be0568f6566d21", "duration"=>202450, "audio_url"=>"https://p.scdn.co/mp3-preview/53a95c27490ea1a42e0264a57fc73dacb961f2a7", "score"=>0, "song"=>{"user"=>"Anh", "playlist_id"=>"3", "title"=>"Summer Sixteen", "artist"=>"Drake", "album"=>"Summer Sixteen", "album_art"=>"https://i.scdn.co/image/deca07958307f6fb491514b913be0568f6566d21", "duration"=>202450, "audio_url"=>"https://p.scdn.co/mp3-preview/53a95c27490ea1a42e0264a57fc73dacb961f2a7", "score"=>0}}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: playlist_id, duration
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("user", "playlist_id", "title", "artist", "album", "album_art", "audio_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user", "Anh"], ["playlist_id", 3], ["title", "Summer Sixteen"], ["artist", "Drake"], ["album", "Summer Sixteen"], ["album_art", "https://i.scdn.co/image/deca07958307f6fb491514b913be0568f6566d21"], ["audio_url", "https://p.scdn.co/mp3-preview/53a95c27490ea1a42e0264a57fc73dacb961f2a7"], ["created_at", 2016-07-18 21:47:17 UTC], ["updated_at", 2016-07-18 21:47:17 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 25ms (Views: 0.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/playlists/3/songs.json" for ::1 at 2016-07-18 17:47:22 -0400
+Processing by SongsController#create as JSON
+  Parameters: {"user"=>"Anh", "playlist_id"=>"3", "title"=>"Promise", "artist"=>"Kid Ink", "album"=>"Summer In The Winter", "album_art"=>"https://i.scdn.co/image/e43b111ee4ed30b17ae40b1c73326a54df53ffc9", "duration"=>224240, "audio_url"=>"https://p.scdn.co/mp3-preview/c3352906ce51968233a2cef283b86d4483f2e911", "score"=>0, "song"=>{"user"=>"Anh", "playlist_id"=>"3", "title"=>"Promise", "artist"=>"Kid Ink", "album"=>"Summer In The Winter", "album_art"=>"https://i.scdn.co/image/e43b111ee4ed30b17ae40b1c73326a54df53ffc9", "duration"=>224240, "audio_url"=>"https://p.scdn.co/mp3-preview/c3352906ce51968233a2cef283b86d4483f2e911", "score"=>0}}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: playlist_id, duration
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("user", "playlist_id", "title", "artist", "album", "album_art", "audio_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user", "Anh"], ["playlist_id", 3], ["title", "Promise"], ["artist", "Kid Ink"], ["album", "Summer In The Winter"], ["album_art", "https://i.scdn.co/image/e43b111ee4ed30b17ae40b1c73326a54df53ffc9"], ["audio_url", "https://p.scdn.co/mp3-preview/c3352906ce51968233a2cef283b86d4483f2e911"], ["created_at", 2016-07-18 21:47:22 UTC], ["updated_at", 2016-07-18 21:47:22 UTC]]
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 17ms (Views: 0.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/playlists/3/songs.json" for ::1 at 2016-07-18 17:47:25 -0400
+Processing by SongsController#create as JSON
+  Parameters: {"user"=>"Anh", "playlist_id"=>"3", "title"=>"Kings of Summer", "artist"=>"ayokay", "album"=>"Kings of Summer", "album_art"=>"https://i.scdn.co/image/b377016b0f8bdb50899c311c0a1108c09f4bbe36", "duration"=>222694, "audio_url"=>"https://p.scdn.co/mp3-preview/b2f809593844c5a6ccc4fa51aa67255c8a37554d", "score"=>0, "song"=>{"user"=>"Anh", "playlist_id"=>"3", "title"=>"Kings of Summer", "artist"=>"ayokay", "album"=>"Kings of Summer", "album_art"=>"https://i.scdn.co/image/b377016b0f8bdb50899c311c0a1108c09f4bbe36", "duration"=>222694, "audio_url"=>"https://p.scdn.co/mp3-preview/b2f809593844c5a6ccc4fa51aa67255c8a37554d", "score"=>0}}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameters: playlist_id, duration
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("user", "playlist_id", "title", "artist", "album", "album_art", "audio_url", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["user", "Anh"], ["playlist_id", 3], ["title", "Kings of Summer"], ["artist", "ayokay"], ["album", "Kings of Summer"], ["album_art", "https://i.scdn.co/image/b377016b0f8bdb50899c311c0a1108c09f4bbe36"], ["audio_url", "https://p.scdn.co/mp3-preview/b2f809593844c5a6ccc4fa51aa67255c8a37554d"], ["created_at", 2016-07-18 21:47:25 UTC], ["updated_at", 2016-07-18 21:47:25 UTC]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 12ms (Views: 0.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/playlists/3/songs.json" for ::1 at 2016-07-18 17:48:28 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"3"}
+  [1m[36mPlaylist Load (0.4ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSong Load (0.3ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+Completed 200 OK in 86ms (Views: 0.4ms | ActiveRecord: 15.6ms)
+
+
+Started GET "/playlists/3/songs.json" for ::1 at 2016-07-18 17:48:28 -0400
+Processing by SongsController#index as JSON
+  Parameters: {"playlist_id"=>"3"}
+  [1m[36mPlaylist Load (0.3ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mSong Load (0.2ms)[0m  [1m[34mSELECT "songs".* FROM "songs" WHERE "songs"."playlist_id" = $1[0m  [["playlist_id", 3]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
