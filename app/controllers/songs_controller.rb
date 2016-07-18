@@ -19,7 +19,7 @@ class SongsController < ApplicationController
   # POST /songs
   def create
     @playlist = Playlist.find(params[:playlist_id])
-    @song = @playlist.songs.new(song_params)
+    @song = @playlist.songs.build(song_params)
 
     if @song.save
       render json: @song.to_json, status: :created, location: @song
