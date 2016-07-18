@@ -26,6 +26,8 @@ class SongsController < ApplicationController
     else
       render json: @song.errors, status: :unprocessable_entity
     end
+
+    redirect_to @playlist
   end
 
   # PATCH/PUT /songs/1
