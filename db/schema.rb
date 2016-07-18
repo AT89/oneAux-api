@@ -19,24 +19,24 @@ ActiveRecord::Schema.define(version: 20160718143245) do
     t.string   "name"
     t.string   "access_code"
     t.integer  "songs_per_user"
-    t.integer  "songs_id",                    array: true
     t.string   "location"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.index ["songs_id"], name: "index_playlists_on_songs_id", using: :btree
   end
 
   create_table "songs", force: :cascade do |t|
     t.string   "user"
+    t.integer  "playlist_id"
     t.string   "title"
     t.string   "artist"
     t.string   "album"
     t.string   "album_art"
     t.string   "duration"
     t.string   "audio_url"
-    t.string   "score",      default: "0"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "score",       default: "0"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["playlist_id"], name: "index_songs_on_playlist_id", using: :btree
   end
 
 end

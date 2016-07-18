@@ -8,3 +8,7 @@
 data = JSON.parse(File.read("db/playlist.json"))
 Playlist.destroy_all
 Playlist.create!(data)
+
+data = JSON.parse(File.read("db/song.json"))
+Song.destroy_all
+Song.create!(data)

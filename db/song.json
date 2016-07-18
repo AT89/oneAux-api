@@ -1,42 +1,46 @@
 [
     {
     "user": "Anh",
+    "playlist_id": 1,
     "title": "The Night Santa Went Crazy",
       "artist": "Weird Al Yankovic",
       "album": "The Essential Weird AL Yankovic",
       "album_art": "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
       "duration": "241720",
       "audio_url": "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794",
-      "score": 0,
+      "score": 0
     },
     {
     "user": "Anh",
+        "playlist_id": 1,
     "title": "Another Song",
       "artist": "Weird Al Yankovic",
       "album": "The Essential Weird AL Yankovic",
       "album_art": "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
       "duration": "241720",
       "audio_url": "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794",
-      "score": 0,
+      "score": 0
     },
     {
     "user": "Tyson",
+        "playlist_id": 1,
     "title": "Hit me baby one more time",
       "artist": "Weird Al Yankovic",
       "album": "The Essential Weird AL Yankovic",
       "album_art": "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
       "duration": "241720",
       "audio_url": "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794",
-      "score": 0,
+      "score": 0
     },
     {
     "user": "James",
+        "playlist_id": 1,
     "title": "Haba haaba",
       "artist": "Weird Al Yankovic",
       "album": "The Essential Weird AL Yankovic",
       "album_art": "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
       "duration": "241720",
       "audio_url": "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794",
-      "score": 0,
-    },
+      "score": 0
+    }
 ]
