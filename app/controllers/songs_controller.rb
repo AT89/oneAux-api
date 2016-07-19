@@ -12,7 +12,7 @@ class SongsController < ApplicationController
   # GET /songs/1
   def show
       @playlist = Playlist.find(params[:playlist_id])
-      @song = Song.find(params[:id].merge(playlist_id: @playlist.id))
+      @song = Song.find(params[:id])
       render json: @song.to_json
   end
 
@@ -31,13 +31,13 @@ class SongsController < ApplicationController
 
   # PATCH/PUT /songs/1
   def update
-    @playlist = Playlist.find(params[:playlist_id])
-    @song = Song.find(params[:id].merge(playlist_id: @playlist.id))
-    if @song.update(:score)
-        render json: @song.to_json
-    else
-        render json: @song.errors, status: :unprocessable_entity
-    end
+        @playlist = Playlist.find(params[:playlist_id])
+        @song = Song.find(params[:id])
+        if @song.update(song_params)
+            render json: @song.to_json
+        else
+            render json: @song.errors, status: :unprocessable_entity
+        end
     end
 
   # DELETE /songs/1
@@ -54,6 +54,6 @@ class SongsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def song_params
-      params.require(:song).permit( :title,:user, :artist,:album,:album_art,:duraton,:audio_url,:score)
+      params.require(:song).permit( :title,:user, :artist,:album,:album_art,:duration,:audio_url,:score)
     end
 end
