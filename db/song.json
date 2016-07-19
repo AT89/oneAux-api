@@ -8,7 +8,8 @@
       "album_art": "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
       "duration": "241720",
       "audio_url": "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794",
-      "score": 0
+      "score": 0,
+      "uri": "spotify:track:1RLLZU8KLPbezWwPQU0aJg"
     },
     {
     "user": "Anh",
@@ -19,7 +20,8 @@
       "album_art": "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
       "duration": "241720",
       "audio_url": "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794",
-      "score": 0
+      "score": 0,
+      "uri": "spotify:track:1RLLZU8KLPbezWwPQU0aJg"
     },
     {
     "user": "Tyson",
@@ -30,7 +32,8 @@
       "album_art": "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
       "duration": "241720",
       "audio_url": "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794",
-      "score": 0
+      "score": 0,
+      "uri": "spotify:track:5g6kBRM595PnXe2VRDqLge"
     },
     {
     "user": "James",
@@ -41,6 +44,7 @@
       "album_art": "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c",
       "duration": "241720",
       "audio_url": "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794",
-      "score": 0
+      "score": 0,
+      "uri": "spotify:track:5g6kBRM595PnXe2VRDqLge"
     }
 ]
