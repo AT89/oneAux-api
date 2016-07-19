@@ -31,13 +31,14 @@ class SongsController < ApplicationController
 
   # PATCH/PUT /songs/1
   def update
-    @song = Song.find(params[:id])
-    if @song.update(song_params)
-      render json: @song.to_json
+    @playlist = Playlist.find(params[:playlist_id])
+    @song = Song.find(params[:id].merge(playlist_id: @playlist.id))
+    if @song.update(:score)
+        render json: @song.to_json
     else
-      render json: @song.errors, status: :unprocessable_entity
+        render json: @song.errors, status: :unprocessable_entity
     end
-  end
+    end
 
   # DELETE /songs/1
   def destroy
