@@ -38,6 +38,9 @@ class SongsController < ApplicationController
         else
             render json: @song.errors, status: :unprocessable_entity
         end
+
+        # Song.update_playlist(@playlist)
+
     end
 
   # DELETE /songs/1
