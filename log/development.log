@@ -6901,3 +6901,46 @@ Unpermitted parameters: id, playlist_id, created_at, updated_at
 Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 2.7ms)
 
 
+Started POST "/playlists.json" for ::1 at 2016-07-20 09:29:50 -0400
+Processing by PlaylistsController#create as JSON
+  Parameters: {"name"=>"Heroku check", "access_code"=>"1357", "songs_per_user"=>"5", "location"=>"Tyson's house", "access_token"=>"BQDjedd4XIq6xGg0QOrU8pJkzIhHVjNLscioKxDyyzU_4MfvlFM40obg3H15hvgPbJi9tf8UNK7MIxsP0tW0HWsRA0mdMFS84r58YC_y6oh1ybnxUhTDHZxqKFnhVzEkkookY3zAPtWbWNGeb0r2HuhRkIf3aJI3RpwRfkk3jnMiKqDLb935jq5GotRmXKjAWMT6N1hTPZuXM_2XzoxZPdJs8pc3UENwFBk", "spotify_user_id"=>"wombat_dev", "spotify_playlist_id"=>"1R7ckYrLXvL2g424KsBEIx", "playlist"=>{"name"=>"Heroku check", "access_code"=>"1357", "songs_per_user"=>"5", "location"=>"Tyson's house", "access_token"=>"BQDjedd4XIq6xGg0QOrU8pJkzIhHVjNLscioKxDyyzU_4MfvlFM40obg3H15hvgPbJi9tf8UNK7MIxsP0tW0HWsRA0mdMFS84r58YC_y6oh1ybnxUhTDHZxqKFnhVzEkkookY3zAPtWbWNGeb0r2HuhRkIf3aJI3RpwRfkk3jnMiKqDLb935jq5GotRmXKjAWMT6N1hTPZuXM_2XzoxZPdJs8pc3UENwFBk", "spotify_user_id"=>"wombat_dev", "spotify_playlist_id"=>"1R7ckYrLXvL2g424KsBEIx"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "playlists" ("name", "access_code", "songs_per_user", "location", "access_token", "spotify_user_id", "spotify_playlist_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Heroku check"], ["access_code", "1357"], ["songs_per_user", 5], ["location", "Tyson's house"], ["access_token", "BQDjedd4XIq6xGg0QOrU8pJkzIhHVjNLscioKxDyyzU_4MfvlFM40obg3H15hvgPbJi9tf8UNK7MIxsP0tW0HWsRA0mdMFS84r58YC_y6oh1ybnxUhTDHZxqKFnhVzEkkookY3zAPtWbWNGeb0r2HuhRkIf3aJI3RpwRfkk3jnMiKqDLb935jq5GotRmXKjAWMT6N1hTPZuXM_2XzoxZPdJs8pc3UENwFBk"], ["spotify_user_id", "wombat_dev"], ["spotify_playlist_id", "1R7ckYrLXvL2g424KsBEIx"], ["created_at", 2016-07-20 13:29:50 UTC], ["updated_at", 2016-07-20 13:29:50 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 201 Created in 28ms (Views: 3.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/playlists.json" for ::1 at 2016-07-20 09:29:54 -0400
+Processing by PlaylistsController#index as JSON
+  [1m[36mPlaylist Load (1.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists"[0m
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/playlists/8/songs.json" for ::1 at 2016-07-20 09:32:30 -0400
+Processing by SongsController#index as JSON
+Started GET "/playlists/8.json" for ::1 at 2016-07-20 09:32:30 -0400
+  Parameters: {"playlist_id"=>"8"}
+Processing by PlaylistsController#show as JSON
+  Parameters: {"id"=>"8"}
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 404 Not Found in 4ms (ActiveRecord: 0.9ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Playlist with 'id'=8):
+  
+app/controllers/songs_controller.rb:6:in `index'
+  [1m[36mPlaylist Load (62.6ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 404 Not Found in 64ms (ActiveRecord: 62.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Playlist with 'id'=8):
+  
+app/controllers/playlists_controller.rb:44:in `set_playlist'
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "Rack::Cors" => Rack::Cors
+
+ (called from <top (required)> at /Users/JGraham/wdi/projects/playlist-rails-api/config/environment.rb:5)
