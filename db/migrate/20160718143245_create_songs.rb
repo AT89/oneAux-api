@@ -10,6 +10,7 @@ class CreateSongs < ActiveRecord::Migration[5.0]
       t.string :duration
       t.string :audio_url
       t.string :score, default:0
+      t.string :uri
       t.timestamps
     end
   end

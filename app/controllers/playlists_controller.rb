@@ -46,6 +46,6 @@ class PlaylistsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def playlist_params
-      params.require(:playlist).permit(:name, :access_code, :songs_per_user, :location)
+      params.require(:playlist).permit(:name, :access_code, :songs_per_user, :location, :access_token, :spotify_user_id, :spotify_playlist_id)
     end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719194035) do
+ActiveRecord::Schema.define(version: 20160718143245) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,8 +20,11 @@ ActiveRecord::Schema.define(version: 20160719194035) do
     t.string   "access_code"
     t.integer  "songs_per_user"
     t.string   "location"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.string   "access_token"
+    t.string   "spotify_user_id"
+    t.string   "spotify_playlist_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
   end
 
   create_table "songs", force: :cascade do |t|
@@ -34,9 +37,9 @@ ActiveRecord::Schema.define(version: 20160719194035) do
     t.string   "duration"
     t.string   "audio_url"
     t.string   "score",       default: "0"
+    t.string   "uri"
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
-    t.string   "uri"
     t.index ["playlist_id"], name: "index_songs_on_playlist_id", using: :btree
   end
 
