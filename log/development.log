@@ -4574,3 +4574,9 @@ ORDER BY c.conname
   [1m[35m (1.7ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("user", "playlist_id", "title", "artist", "album", "album_art", "duration", "audio_url", "created_at", "updated_at", "uri") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) RETURNING "id"[0m  [["user", "James"], ["playlist_id", 1], ["title", "Haba haaba"], ["artist", "Weird Al Yankovic"], ["album", "The Essential Weird AL Yankovic"], ["album_art", "https://i.scdn.co/image/cc805225c3fe358c89105893106cdd5b81f8189c"], ["duration", "241720"], ["audio_url", "https://p.scdn.co/mp3-preview/1222ffbc4c3df0756df4a0c7ac586bdf22cd4794"], ["created_at", 2016-07-19 19:44:03 UTC], ["updated_at", 2016-07-19 19:44:03 UTC], ["uri", "spotify:track:5g6kBRM595PnXe2VRDqLge"]]
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: Passing strings or symbols to the middleware builder is deprecated, please change
+them to actual class references.  For example:
+
+  "Rack::Cors" => Rack::Cors
+
+ (called from <top (required)> at /Users/anhtice/playlist-app/OneAux_api/config/environment.rb:5)
