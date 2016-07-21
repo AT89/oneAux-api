@@ -9,7 +9,7 @@ class CreateSongs < ActiveRecord::Migration[5.0]
       t.string :album_art
       t.string :duration
       t.string :audio_url
-      t.string :score, default:0
+      t.integer :score, default:0
       t.string :uri
       t.boolean :active, default: true
       t.timestamps
