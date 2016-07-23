@@ -1,24 +1,14 @@
-# README
+#OneAux rails API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Using Rails 5.00, we created the rails api by using --api  and wiht postgresql handling the sql calls
+```
+rails new oneAux-API --api -d postgresql
+```
+and then just using 
+```
+rails scaffold generate playlists
+rails scaffold generate songs 
+```
+and linking then nesting them together, creating the tables and a little bit more configuring and our Rails server is up!
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+this is hosted on Heroku
