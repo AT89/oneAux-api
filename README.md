@@ -15,4 +15,7 @@ and linking then nesting them together, creating the tables and a little bit mor
 
 this is hosted on Heroku
 
+OneAux github: https://github.com/AT89/playlist-angular
+
+
 
