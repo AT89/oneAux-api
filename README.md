@@ -13,9 +13,9 @@ rails scaffold generate songs
 ```
 and linking then nesting them together, creating the tables and a little bit more configuring and our Rails server is up!
 
-this is hosted on Heroku
+this is hosted on Heroku http://oneaux.herokuapp.com/
 
-OneAux github: https://github.com/AT89/playlist-angular
+OneAux github: https://github.com/AT89/oneaux
 
 
 
