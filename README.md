@@ -8,8 +8,8 @@ rails new oneAux-API --api -d postgresql
 ```
 and then just using 
 ```
-rails scaffold generate playlists
-rails scaffold generate songs 
+rails generate scaffold playlists
+rails generate scaffold songs 
 ```
 and linking then nesting them together, creating the tables and a little bit more configuring and our Rails server is up!
 
