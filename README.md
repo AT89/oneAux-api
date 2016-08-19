@@ -12,7 +12,10 @@ rails generate scaffold playlists
 rails generate scaffold songs 
 ```
 
-Use the gem rack-cors to let your rails talk to your Front-end app!
+Use the gem rack-cors to let your rails talk to your Front-end app! 
+
+https://github.com/cyu/rack-cors#rails
+
 Install the gem:
 ```
 gem install rack-cors
