@@ -11,6 +11,19 @@ and then just using
 rails generate scaffold playlists
 rails generate scaffold songs 
 ```
+
+Use the gem rack-cors to let your rails talk to your Front-end app!
+Install the gem:
+```
+gem install rack-cors
+```
+Or in your Gemfile:
+```
+gem 'rack-cors', :require => 'rack/cors'
+```
+
+
+
 and linking then nesting them together, creating the tables and a little bit more configuring and our Rails server is up!
 
 this is hosted on Heroku http://oneaux.herokuapp.com/
